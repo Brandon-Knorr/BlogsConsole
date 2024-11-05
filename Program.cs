@@ -6,7 +6,23 @@ var logger = LogManager.Setup().LoadConfigurationFromFile(path).GetCurrentClassL
 
 logger.Info("Program started");
 
+string? choice;
 
+do {
+  // Display the choices to the user
+  logger.Info("Entered Menu Options");
+  Console.WriteLine("1) Display All Blogs");
+  Console.WriteLine("2) Add Blog");
+  Console.WriteLine("3) Create Post");
+  Console.WriteLine("4) Display Posts");
+  Console.WriteLine("Enter to quit");
+
+
+// Input selection 
+choice = Console.ReadLine();
+logger.Info("User choice: {Choice}", choice);
+
+} while (choice == "1" || choice == "2" || choice == "3" || choice == "4");
 // Create and save a new Blog
 Console.Write("Enter a name for a new Blog: ");
 var name = Console.ReadLine();
